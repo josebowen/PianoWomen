@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Women Composers (1800–1900) — Piano Works</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Women Composers (1800–1900) — Piano Works</h1>
+        <p class="lede">
+          Search and browse women composers <strong>born 1800–1900</strong> with <strong>verifiable published piano
+          music</strong>. Country grouping uses the <strong>historical country at birth</strong> (or the
+          <strong>primary career country</strong> when more appropriate), normalized to <strong>common modern country names</strong>.
+        </p>
+
+        <nav class="tabs" aria-label="Views">
+          <button class="tab" data-view="search" aria-current="page">Search</button>
+          <button class="tab" data-view="browse">Browse by Country</button>
+          <button class="tab" data-view="about">About</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="view-search" class="view" data-view="search">
+        <div class="controls">
+          <div class="control">
+            <label for="q">Search</label>
+            <input id="q" type="search" placeholder="Composer or work title…" autocomplete="off" />
+          </div>
+          <div class="control">
+            <label for="country">Country</label>
+            <select id="country">
+              <option value="">All countries</option>
+            </select>
+          </div>
+          <div class="control control-inline">
+            <label for="bornMin">Born (min)</label>
+            <input id="bornMin" type="number" inputmode="numeric" placeholder="1800" />
+          </div>
+          <div class="control control-inline">
+            <label for="bornMax">Born (max)</label>
+            <input id="bornMax" type="number" inputmode="numeric" placeholder="1900" />
+          </div>
+          <div class="control">
+            <label for="sort">Sort</label>
+            <select id="sort">
+              <option value="countryThenYear">Country, then birth year</option>
+              <option value="year">Birth year</option>
+              <option value="name">Last name</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="status" id="status" role="status" aria-live="polite"></div>
+
+        <div class="layout">
+          <section class="results" aria-label="Results">
+            <ul id="results" class="results-list"></ul>
+          </section>
+
+          <aside class="details" aria-label="Composer details">
+            <div id="details" class="details-card muted">
+              <p>Select a composer to view details.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="view-browse" class="view hidden" data-view="browse">
+        <div class="status" id="browseStatus" role="status" aria-live="polite"></div>
+        <div id="browse" class="browse"></div>
+      </section>
+
+      <section id="view-about" class="view hidden" data-view="about">
+        <div class="card">
+          <h2>Inclusion criteria</h2>
+          <ul>
+            <li>Women composers born 1800–1900 (inclusive)</li>
+            <li>Includes composers with verifiable published piano music (score scan, edition listing, archive holding)</li>
+            <li>Works listed are limited to solo piano works</li>
+          </ul>
+
+          <h2>Project files</h2>
+          <ul>
+            <li><code>composers.json</code> — database</li>
+            <li><code>resources.md</code> — research sources</li>
+            <li><code>by_country.md</code> — generated country list</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p class="muted">
+          Data lives in <code>composers.json</code>. Website is static: <code>index.html</code> + <code>app.js</code> + <code>style.css</code>.
+        </p>
+      </div>
+    </footer>
+
+    <script src="composers.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
